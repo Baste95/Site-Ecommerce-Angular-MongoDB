@@ -1,0 +1,51 @@
+
+<div id="content">
+    <span id="title">Admin : Incrire un Admin</span>
+    <hr/>
+    <form id="signup-form" [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm)" class="formFlex">
+
+        <div class="field">
+            <input id="email-input" type="text" name="user" class="input" formControlName="user" placeholder=" ">
+            <label for="email" class="label">Utilisateur</label>
+        </div>
+        
+        <div class="field" [ngClass]="(f.password.invalid && (f.password.dirty || f.password.touched)) ? 'field-error' : 'field'">
+            <input id="password-input" type="password" name="password" class="input" formControlName="password" placeholder=" " type="{{ showPassword ? 'text' : 'password' }}">
+            <label for="password" class="label">Mot de passe</label>
+            <span class="toggle-password" (click)="onClickPassword()">
+                <mat-icon aria-hidden="false" aria-label="Search icon" *ngIf="showPassword; else elseBlock">visibility</mat-icon></span>
+                <ng-template #elseBlock><mat-icon aria-hidden="false" aria-label="Search icon">visibility_off</mat-icon></ng-template>
+        </div>
+        <div id="invalid-password">
+            <ul class="invalid" *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)">
+                <li>Minimum 8 caractères.</li>
+                <li>Maximun 32 caractères</li>
+                <li>Doit contenir une majuscule et une minuscule.</li>
+                <li>Doit contenir un chiffre</li>
+                <li>Doit contenir un caratère spécial <i>@$!%*?_&-</i></li>
+            </ul>
+        </div>
+
+        <div class="field" [ngClass]="(f.passwordvalidation.invalid && (f.passwordvalidation.dirty || f.passwordvalidation.touched)) ? 'field-error' : 'field'">
+            <input id="password-validation-input" type="password" name="password-validation" class="input" formControlName="passwordvalidation" placeholder=" " type="{{ showPasswordValidation ? 'text' : 'password' }}">
+            <label for="passwordvalidation" class="label">Confirmer mot de passe</label>
+            <span class="toggle-password" (click)="onClickPasswordValidation()">
+                <mat-icon aria-hidden="false" aria-label="Search icon" *ngIf="showPasswordValidation; else elseBlockValidation">visibility</mat-icon></span>
+                <ng-template #elseBlockValidation><mat-icon aria-hidden="false" aria-label="Search icon">visibility_off</mat-icon></ng-template>
+        </div>
+
+        <div id="invalid-password-confirmation">
+            <span class="invalid" *ngIf="signupForm.errors">
+                Erreur: Les mots de passe de correspondent pas.
+            </span>
+        </div>
+    </form>
+
+    <hr/>
+
+    <div id="div-btn">
+        <button id="signup-button" type="submit" [disabled]="signupForm.invalid" form="signup-form">Enregistrer</button>
+        
+    </div>
+    
+</div>

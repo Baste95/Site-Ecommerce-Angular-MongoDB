@@ -1,0 +1,43 @@
+
+
+<div id="content">
+    <span id="title">Se connecter</span>
+    <hr/>
+    <form id="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)" class="formFlex">
+
+        <div class="field">
+            <input id="email-input" type="email" name="email" class="input" formControlName="email" placeholder=" ">
+            <label for="email" class="label">Email</label>
+        </div>
+        
+        <div class="field">
+            <input id="password-input" type="password" name="password" class="input" formControlName="password" placeholder=" " type="{{ showPassword ? 'text' : 'password' }}">
+            <label for="password" class="label">Mot de passe</label>
+            <span class="toggle-password" (click)="onClickPassword()">
+                <mat-icon aria-hidden="false" aria-label="Search icon" *ngIf="showPassword; else elseBlock">visibility</mat-icon></span>
+                <ng-template #elseBlock><mat-icon aria-hidden="false" aria-label="Search icon">visibility_off</mat-icon></ng-template>
+            
+        </div>
+
+        <div id="div-forget-pw">
+            <a id="a-forget-pw" routerLink="/" routerLinkActive="active" >
+                Mot de passe oublié ?
+            </a>
+        </div>
+
+        <div id="div-no-account">
+            <span id="span-no-account">
+                Pas de compte ? <a routerLink="/signup" routerLinkActive="active" id="a-no-account">Inscription</a>
+            </span>
+        </div>
+
+    </form>
+
+    <hr/>
+
+    <div id="div-btn">
+        <button id="login-button" type="submit" [disabled]="loginForm.invalid" form="login-form">Connexion</button>
+        
+    </div>
+    
+</div>

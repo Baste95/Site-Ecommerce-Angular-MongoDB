@@ -1,0 +1,65 @@
+<header>
+
+    <div id="header-first-row" class="nav-flex">
+        <div class="nav-left">
+            <a routerLink="/" routerLinkActive="active" class="nav-flex">
+                <img src="/assets/image/website/dartyicon.png" alt="Logo Darty Home">
+            </a>
+        </div>
+        <div class="nav-fill ">
+            <div id="nav-search">
+                <form [formGroup]="searchForm" (ngSubmit)="onSubmit(searchForm.value)" class="nav-flex">
+                    <div class="nav-left search-element">
+                        <select name="category-search" id="category-search-select" formControlName="category">
+                            <option value="Toutes les catégories" selected="selected">Toutes les catégories</option>
+                            <option *ngFor="let category of categories" [value]="category.name">{{category.name}}</option>
+                        </select>
+                    </div>
+                    <div class="nav-fill search-element">
+                        <input id="search-text-input" type="text" formControlName="product" autocomplete="off">
+                    </div>
+                    <div class="nav-right search-element">
+                        <button id="search-submit-input" type="submit" [disabled]="searchForm.invalid">
+                        <mat-icon aria-hidden="false" aria-label="Search icon">search</mat-icon>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="nav-right nav-flex" style="margin-right: 30px;">
+            <a routerLink="/login" routerLinkActive="active" class="a-first-row-right">
+                <mat-icon aria-hidden="false" aria-label="Account icon">account_circle</mat-icon>
+                <span>Votre Profil</span>
+            </a>
+            <a routerLink="/cart" routerLinkActive="active" class="a-first-row-right">
+                <mat-icon aria-hidden="false" aria-label="Cart icon">shopping_cart</mat-icon>
+                <span>Panier</span>
+            </a>
+        </div>
+    </div>
+
+    <div id="header-second-row" class="secondary-flex">
+        <div class="nav-left">
+            <a href="javascript:void(0);" (click)="ShowMenu()" class="a-menu dropbtn" >
+                <mat-icon  aria-hidden="false" aria-label="Button Menu" class="dropbtn">menu</mat-icon>
+                <span class="dropbtn">Tous nos rayons</span>
+                <div class="dropdown-content" id="myDropdown">
+                    <a *ngFor="let category of categories" href="javascript:void(0);" (click)="ShowSecondMenu(category.name)" class=" dropbtn" >
+                        {{category.name}}
+                        <div class="dropdown-content2" id="{{category.name}}">
+                            <a routerLink="/category/{{category.name}}">Tout les produits</a>
+                            <a *ngFor="let subcategory of category.sub" routerLink="/subcategory/{{subcategory}}" >{{ subcategory }}</a>
+                        </div>
+                    </a>
+                  </div>
+            </a>
+        </div>
+        <div class="nav-fill">
+            <a routerLink="/sales" routerLinkActive="active" class="a-second-row-right">Bon plans</a>
+            <a routerLink="/news" routerLinkActive="active" class="a-second-row-right">Nouveautés</a>
+
+        </div>
+        
+    </div>
+
+</header>

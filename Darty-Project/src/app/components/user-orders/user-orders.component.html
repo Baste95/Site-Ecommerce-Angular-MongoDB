@@ -1,0 +1,36 @@
+<div id=content>
+    <span id="title">Mes commandes</span>
+    <hr />
+    <div class="products-div" *ngFor="let order of orders; let indexOfelement=index;">   
+        <div class="description-order">
+            <p class="title-ordre">Commande du {{order.createdAt}}.</p>
+            <p class="elem-ordre">Mis à jour : {{order.updatedAt}}.</p>
+            <p class="elem-ordre">{{order.description}}.</p>
+            <p class="elem-ordre">Acheté avec {{order.cart.typecart}} : {{order.cart.lastnumber}}</p>
+            <p class="elem-ordre">Adresse :  {{order.fulladress.adress}} {{order.fulladress.city}} {{order.fulladress.zip}} {{order.fulladress.country}}</p>
+            <p class="elem-ordre">Prix : {{order.finalprice}}€</p>   
+            
+        </div>
+         <div *ngFor="let product of products[indexOfelement];">
+             <div class="product-div">
+                <img class="product-img" src="{{product.image}}" width="76"  height="110" >
+                <div>
+                    <p class="elem-product">{{product.name}}</p>
+                    <div class="rating"><!--
+                    --><a href="javascript:void(0);" (click)="GiveNote(5, product.id)" title="Donner 5 étoiles">☆</a><!--
+                    --><a href="javascript:void(0);" (click)="GiveNote(4, product.id)" title="Donner 4 étoiles">☆</a><!--
+                    --><a href="javascript:void(0);" (click)="GiveNote(3, product.id)" title="Donner 3 étoiles">☆</a><!--
+                    --><a href="javascript:void(0);" (click)="GiveNote(2, product.id)" title="Donner 2 étoiles">☆</a><!--
+                    --><a href="javascript:void(0);" (click)="GiveNote(1, product.id)" title="Donner 1 étoile">☆</a>
+                 </div>
+                    <p class="elem-product">{{product.price}}€</p>
+                </div>
+                
+
+             </div>
+         </div>
+
+
+        <hr />
+    </div>
+</div>

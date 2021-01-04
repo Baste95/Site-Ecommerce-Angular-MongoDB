@@ -1,0 +1,32 @@
+
+<div id="content">
+    <span id="title">Admin : Ajoutez une catégorie</span>
+    <hr/>
+    <form id="add-categorie-form" [formGroup]="addCategorieForm" (ngSubmit)="onSubmit(addCategorieForm)" class="formFlex">
+
+        <div class="field">
+            <input id="name-input" type="text" name="name" class="input" formControlName="name" placeholder=" " autocomplete="off">
+            <label for="name" class="label">Nom de la catégorie</label>
+        </div>
+
+        <div class="field">
+            <input id="description-input" type="text" name="description" class="input" formControlName="description" placeholder=" " autocomplete="off">
+            <label for="description" class="label">Description de la catégorie</label>
+        </div>
+
+        <div class="field">
+            <input id="subcategories-input" type="text" name="subcategories" class="input" formControlName="subcategories" placeholder=" " autocomplete="off">
+            <label for="subcategories" class="label">Sous-catégories</label>
+        </div>
+        
+        
+    </form>
+
+    <hr/>
+
+    <div id="div-btn">
+        <button id="add-categorie-button" type="submit" [disabled]="addCategorieForm.invalid" form="add-categorie-form">Ajoutez</button>
+        
+    </div>
+    
+</div>

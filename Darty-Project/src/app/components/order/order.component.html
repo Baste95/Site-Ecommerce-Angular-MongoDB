@@ -1,0 +1,53 @@
+<span *ngIf="!isOrder else elseBlock" >
+    <div id="content">
+            <span id="title">Commande</span>
+            <hr/>
+            <form id="login-form" [formGroup]="orderForm" (ngSubmit)="onSubmit(orderForm)" class="formFlex">
+
+                <div class="field">
+                    <label for="typecart" class="label">Utilisateur</label>
+                    <select class="custom-select"  formControlName="typecart">
+                        <option value="Mastercart" >Mastercart</option>
+                        <option value="Visa">Visa</option>
+                    </select>
+                </div>
+                
+                <div class="field">
+                    <input id="numbercart-input" type="text" name="numbercart" class="input" formControlName="numbercart" placeholder=" ">
+                    <label for="numbercart" class="label">16 Numéros de carte</label>
+            
+                </div>
+
+                <div class="field">
+                    <input id="cvv-input" type="text" name="cvv" class="input" formControlName="cvv" placeholder=" ">
+                    <label for="cvv" class="label">3 Numéros de CVV</label>
+            
+                </div>
+
+                <div >
+                    <span class="adress-info">L'adresse utilisée est celle de votre compte. Pour le changer, allez dans votre profile.</span>
+            
+                </div>
+
+
+            </form>
+
+            <hr/>
+
+            <div id="div-btn">
+                <button id="login-button" type="submit" [disabled]="orderForm.invalid" form="login-form">Commandez</button>
+                
+            </div>
+    </div>
+</span>
+
+<ng-template #elseBlock class="product-price"> 
+    <div id="content2">
+        <p class="order-confirm">Votre commande à été validé.</p>
+        <p class="order-confirm">Merci de votre confiance.</p>
+    </div>
+    
+</ng-template>
+    
+
+

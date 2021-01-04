@@ -1,0 +1,165 @@
+#content{
+    
+    background-color: white;
+    margin: 0% 10%;
+}
+
+#title{
+    font-family: Lato, sans-serif;
+    font-weight: bold;
+    font-size: 34px;
+    margin: 4rem 2rem 2%;
+}
+
+.hr{
+  border: 0;
+  clear:both;
+  display:block;
+  width: 95%;               
+  background-color: #C7C7C7;
+  height: 1px;
+}
+
+img{
+    margin-left: 2rem;
+}
+
+.product-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+	justify-content: flex-start;
+    align-content: stretch;
+}
+
+#description{
+    margin: 2% 2rem;
+    color: black;
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.a-product-name{
+    text-decoration: none;
+    color: black;
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.a-product-name:hover{
+    color:  #EB2626;
+    text-decoration: underline;
+}
+
+.info-div{
+    margin-left: 4rem;
+}
+
+.product-desc{
+    color: black;
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.a-product-brand{
+    text-decoration: none;
+    color: teal;
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.a-product-brand:hover{
+    color:  #EB2626;
+}
+
+.a-product-price{
+    text-decoration: none;
+    color: black;
+    font-family: Lato, sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.former-price{
+    font-size: 20px;
+    font-weight: 300;
+    text-decoration: line-through;
+}
+
+.add-to-cart{
+    background-color: #EB2626;
+    border-radius: 35px;
+    color: white;
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    height: 34px;
+    width: 200px;
+    border: none;
+}
+
+.add-to-cart:hover{
+    cursor: pointer;
+    background-color: #e21919;
+}
+
+.add-to-cart:focus{
+    outline: none;
+    box-shadow: 0px 0px 0px 2px #c40f0f;
+}
+
+.product-nostock{
+    font-family: Lato, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.description-order{
+    margin-left: 2rem;
+}
+
+.title-ordre{
+    color: black;
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.elem-ordre{
+    color: black;
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.elem-product{
+    color: black;
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.rating a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 3em;
+    transition: color .4s;
+ }
+ .rating a:hover,
+ .rating a:focus {
+    color: orange;
+    cursor: pointer;
+ }
+
+ .rating a:hover ~ a,
+.rating a:focus ~ a {
+   color: orange;
+}
+
+.rating a {
+    float: right;
+ }

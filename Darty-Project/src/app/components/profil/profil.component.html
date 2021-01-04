@@ -1,0 +1,46 @@
+
+<div id="content">
+
+    <div id="first-row" class="flex-row">
+
+        <a id="a-commands" routerLink="/profil/order" routerLinkActive="active" class="profil-a">
+            <div id="commands-div" >
+                <h2><mat-icon aria-hidden="false" aria-label="Account icon">shopping_basket</mat-icon>Vos commandes</h2>
+                <span>Gérez vos commandes</span>
+            </div>
+        </a>
+
+        <a id="a-commands" routerLink="/profil/email" routerLinkActive="active" class="profil-a">
+            <div id="commands-div" >
+                <h2><mat-icon aria-hidden="false" aria-label="Account icon">security</mat-icon>Paramètres</h2>
+                <span>Modifier votre email.</span>
+            </div>
+        </a>
+    </div>
+
+    <div id="second-row" class="flex-row">
+        <a id="a-commands" routerLink="/profil/adress" routerLinkActive="active" class="profil-a">
+            <div id="commands-div">
+                <h2><mat-icon aria-hidden="false" aria-label="Account icon">location_on</mat-icon>Adresse</h2>
+                <span>Gérez votre adresse de 
+                    livraison.</span>
+            </div>
+        </a>
+
+        <a id="a-commands" routerLink="/about" routerLinkActive="active" class="profil-a">
+            <div id="commands-div" >
+                <h2><mat-icon aria-hidden="false" aria-label="Account icon">description</mat-icon>Conditions Générales</h2>
+                <span>Accédez aux conditions
+                    générales du site.</span>
+            </div>
+        </a>
+    </div>
+
+
+    <div id="third-row">
+        <button id="logout-button" type="submit" (click)="logout()">
+            <span> <mat-icon aria-hidden="false" aria-label="Account icon">arrow_right_alt</mat-icon>Se déconnecter</span>
+        </button>
+    </div>
+</div>
+

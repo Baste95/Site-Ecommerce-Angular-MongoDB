@@ -1,0 +1,53 @@
+<div id=content>
+    <span id="title">{{categoryInformation.name}}</span>
+    <p id="description">{{categoryInformation.description}}</p>
+    <hr />
+    <div class="products-div" *ngFor="let product of products">   
+        <div class="product-div">
+            <div class="img-div">
+                <a routerLink="/product/{{product._id}}" class="a-product-image">
+                    <img class="product-img" src="{{product.mainimage}}" width="155"  height="235" >
+                </a>
+            </div>
+            <div class="info-div">
+                <h2>
+                    <a routerLink="/product/{{product._id}}" class="a-product-name">
+                        <span class="product-name">{{product.name}}</span>
+                    </a>
+                </h2>
+                <span *ngIf="product.note[0]">
+                    <span (init)="test(product.note)">{{product.note}}</span>
+                </span>
+                <p class="product-desc">{{product.shortdescription}}</p>
+                <a routerLink="/product/{{product._id}}" class="a-product-brand">
+                    <span class="product-brand">{{product.brand}}</span>
+                </a>
+                <br/><br/><br/>
+                <span  *ngIf="product.reduction else elseBlock">
+                    <a routerLink="/product/{{product._id}}" class="a-product-price">
+                        <span class="product-price">{{(product.price - (product.price*(product.reduction/100))).toFixed(2)}}€          </span>
+                        <span class="former-price">{{product.price}}€</span>
+                    </a>
+                </span>
+                <ng-template #elseBlock class="product-price"> 
+                    <a routerLink="/product/{{product._id}}" class="a-product-price">
+                        <span class="product-price">{{product.price}}€</span>
+                    </a>
+                </ng-template>
+                <br/><br/>
+                <span  *ngIf="product.stock > 0 else stockBlock">
+                    <span  *ngIf="product.reduction else elseButton">
+                        <button class="add-to-cart" (click)="onAddToCart(product._id, (product.price - (product.price*(product.reduction/100))).toFixed(2))" >Ajouter au panier</button>
+                    </span>
+                    <ng-template #elseButton class="product-price"> 
+                        <button class="add-to-cart" (click)="onAddToCart(product._id, product.price)" >Ajouter au panier</button>
+                    </ng-template>
+                </span>
+                <ng-template #stockBlock class="product-oos"> 
+                    <span class="product-nostock">Stock épuisé !</span>
+                </ng-template>
+            </div>
+        </div>
+        <hr />
+    </div>
+</div>

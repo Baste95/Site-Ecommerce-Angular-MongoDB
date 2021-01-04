@@ -1,0 +1,31 @@
+#bottom-bar{
+    background-color: #445060;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+    align-content: stretch;
+    padding: 4px 0;
+    position: fixed;
+}
+
+#a-bottom-left{
+    color:white;
+    font-family: Lato, sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+    text-decoration: none;
+    margin-left: 2rem;
+}
+
+i{
+    font-size: 14px;
+    margin: 0  2rem;
+    color: white;
+}
+

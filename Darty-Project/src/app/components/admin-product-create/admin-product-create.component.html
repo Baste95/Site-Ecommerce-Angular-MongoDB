@@ -1,0 +1,83 @@
+
+<div id="content">
+    <span id="title">Admin : Ajoutez un produit</span>
+    <hr/>
+    <form id="add-product-form" [formGroup]="addProductForm" (ngSubmit)="onSubmit(addProductForm)" class="formFlex">
+
+        <div class="field">
+            <input id="name-input" type="text" name="name" class="input" formControlName="name" placeholder=" " autocomplete="no">
+            <label for="name" class="label">Nom du produit *</label>
+        </div>
+
+        <div class="field">
+            <input id="description-input" type="text" name="description" class="input" formControlName="description" placeholder=" " autocomplete="off">
+            <label for="description" class="label">Description du produit *</label>
+        </div>
+
+        <div class="field">
+            <input id="shortdescription-input" type="text" name="shortdescription" class="input" formControlName="shortdescription" placeholder=" " autocomplete="off">
+            <label for="subcategories" class="label">Description courte du produit *</label>
+        </div>
+
+        <div class="field">
+            <input id="features-input" type="text" name="features" class="input" formControlName="features" placeholder=" " autocomplete="off" autocomplete="off">
+            <label for="name" class="label">Caractéristiques *</label>
+        </div>
+
+        <div class="field">
+            <input id="price-input" type="text" name="price" class="input" formControlName="price" placeholder=" " autocomplete="off">
+            <label for="description" class="label">Prix *</label>
+        </div>
+
+        <div class="field">
+            <input id="stock-input" type="text" name="stock" class="input" formControlName="stock" placeholder=" " autocomplete="off">
+            <label for="subcategories" class="label">Stock *</label>
+        </div>
+
+        <div class="field">
+            <input id="brand-input" type="text" name="brand" class="input" formControlName="brand" placeholder=" " autocomplete="off">
+            <label for="name" class="label">Marque *</label>
+        </div>
+
+        <div class="field">
+            <input id="reduction-input" type="text" name="reduction" class="input" formControlName="reduction" placeholder=" " autocomplete="off">
+            <label for="description" class="label">Reduction %</label>
+        </div>
+
+        <div class="field">
+            <label for="subcategories" class="label">Catégories *</label>
+            <select class="custom-select" (change)="changeSubcategories($event.target.value)" formControlName="categorie">
+                <option value="" disabled>Catégories</option>
+                <option *ngFor="let category of categoriesForm" [value]="category.name">{{category.name}}</option>
+             </select>
+        </div>
+
+        <div class="field">
+            <label for="name" class="label">Sous-catégories *</label>
+            <select class="custom-select" formControlName="subcategorie">
+                <option value="" disabled>Sous-Catégories</option>
+                <option *ngFor="let subcategory of subcategoriesForm" [value]="subcategory">{{subcategory}}</option>
+             </select>          
+        </div>
+
+        <div class="field">
+            <input id="mainimage-input" type="file" name="mainimage" class="input" formControlName="mainimage" placeholder=" " accept="image/png image/jpg" (change)="getMainImage($event)">
+            <label for="description" class="label">Image principal *</label>
+        </div>
+
+        <div class="field">
+            <input id="secondaryimage-input" type="file" name="secondaryimage" class="input" formControlName="secondaryimage" placeholder=" "  accept="image/png image/jpg" (change)="getSecondaryImage($event)">
+            <label for="subcategories" class="label">Images secondaires</label>
+        </div>
+        
+        
+    </form>
+
+    <hr/>
+
+    <div id="div-btn">
+        <button id="add-product-button" type="submit" [disabled]="addProductForm.invalid" form="add-product-form">Ajoutez</button>
+        
+    </div>
+    
+</div>

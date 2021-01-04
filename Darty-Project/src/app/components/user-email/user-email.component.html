@@ -1,0 +1,25 @@
+
+<div id="content">
+    <span id="title">Changement d'adresse mail</span>
+    <hr/>
+    <form id="signup-form" [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm)" class="formFlex">
+
+        <div class="field" [ngClass]="(f.email.invalid && (f.email.dirty || f.email.touched)) ? 'field-error' : 'field'">
+            <input id="email-input" type="email" name="email" class="input" formControlName="email" placeholder=" ">
+            <label for="email" class="label">Email</label>
+        </div>
+
+        <div class="field" [ngClass]="(f.newemail.invalid && (f.newemail.dirty || f.newemail.touched)) ? 'field-error' : 'field'">
+            <input id="newemail-input" type="email" name="email" class="input" formControlName="newemail" placeholder=" ">
+            <label for="newemail" class="label">Nouveau Email</label>
+        </div>
+    </form>
+
+    <hr/>
+
+    <div id="div-btn">
+        <button id="signup-button" type="submit" [disabled]="signupForm.invalid" form="signup-form">Enregistrer</button>
+        
+    </div>
+    
+</div>

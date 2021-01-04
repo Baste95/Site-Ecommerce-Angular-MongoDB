@@ -1,0 +1,80 @@
+
+<div id="content">
+
+    <div id="first-row" class="flex-row">
+
+        <a id="a-commands" routerLink="/admin/categorie/create" routerLinkActive="active" class="profil-a">
+            <div id="commands-div" >
+                <h2><mat-icon aria-hidden="false" aria-label="Account icon">description</mat-icon>Créer des catégories</h2>
+                <span>Créer des catégories et leurs sous-catégories.</span>
+            </div>
+        </a>
+
+        <a id="a-commands" routerLink="/admin/categorie/update" routerLinkActive="active" class="profil-a">
+            <div id="commands-div" >
+                <h2><mat-icon aria-hidden="false" aria-label="Account icon">description</mat-icon>Modifier des catégories</h2>
+                <span>Modifier des catégories et leurs sous-catégories.</span>
+            </div>
+        </a>
+
+        <a id="a-commands" routerLink="/admin/categorie/delete" routerLinkActive="active" class="profil-a">
+            <div id="commands-div" >
+                <h2><mat-icon aria-hidden="false" aria-label="Account icon">description</mat-icon>Supprimer des catégories</h2>
+                <span>Supprimer des catégories et leurs sous-catégories.</span>
+            </div>
+        </a>
+    </div>
+
+    <div id="second-row" class="flex-row">
+        <a id="a-commands" routerLink="/admin/product/create" routerLinkActive="active" class="profil-a">
+            <div id="commands-div" >
+                <h2><mat-icon aria-hidden="false" aria-label="Account icon">shopping_basket</mat-icon>Ajouter des produits</h2>
+                <span>Ajouter des produits dans la base de données.</span>
+            </div>
+        </a>
+
+        <a id="a-commands" routerLink="/admin/product/update" routerLinkActive="active" class="profil-a">
+            <div id="commands-div" >
+                <h2><mat-icon aria-hidden="false" aria-label="Account icon">shopping_basket</mat-icon>Modifier des produits</h2>
+                <span>Ajouter les caractéristiques des produits.</span>
+            </div>
+        </a>
+
+        <a id="a-commands" routerLink="/admin/product/delete" routerLinkActive="active" class="profil-a">
+            <div id="commands-div" >
+                <h2><mat-icon aria-hidden="false" aria-label="Account icon">shopping_basket</mat-icon>Supprimer des produits</h2>
+                <span>Supprimer les produits de la base de données.</span>
+            </div>
+        </a>
+    </div>
+
+    <div id="third-row" class="flex-row">
+        <a id="a-commands" routerLink="/admin/signup" routerLinkActive="active" class="profil-a">
+            <div id="commands-div" >
+                <h2><mat-icon aria-hidden="false" aria-label="Account icon">account_circle</mat-icon>Ajouter des Admins</h2>
+                <span>Ajouter des utilisateurs Admins dans la base de données.</span>
+            </div>
+        </a>
+
+        <a id="a-commands" routerLink="/admin/order/update" routerLinkActive="active" class="profil-a">
+            <div id="commands-div" >
+                <h2><mat-icon aria-hidden="false" aria-label="Account icon">account_circle</mat-icon>Modifier des commandes</h2>
+                <span>Modifier les commandes des clients.</span>
+            </div>
+        </a>
+
+        <a id="a-commands" routerLink="/admin/order/delete" routerLinkActive="active" class="profil-a">
+            <div id="commands-div" >
+                <h2><mat-icon aria-hidden="false" aria-label="Account icon">account_circle</mat-icon>Supprimer des commandes</h2>
+                <span>Supprimer les commandes des clients.</span>
+            </div>
+        </a>
+    </div>
+
+
+    <div id="fourth-row">
+        <button id="logout-button" type="submit" (click)="logout()">
+            <span> <mat-icon aria-hidden="false" aria-label="Account icon">arrow_right_alt</mat-icon>Se déconnecter</span>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div id=content>
+    <span id="title">Panier</span>
+    <hr />
+    <span *ngIf="products[0] else noProduct">
+        <div class="products-div" *ngFor="let product of products">   
+            <div class="product-div">
+                <div class="img-div">
+                    <a routerLink="/product/{{product._id}}" class="a-product-image">
+                        <img class="product-img" src="{{product.mainimage}}" width="155"  height="235" >
+                    </a>
+                </div>
+                <div class="info-div">
+                    <h2>
+                        <a routerLink="/product/{{product._id}}" class="a-product-name">
+                            <span class="product-name">{{product.name}}</span>
+                        </a>
+                    </h2>
+                    <br/><br/>
+                    <button class="add-to-cart" (click)="deleteToCart(product._id)" >Supprimer du panier</button>
+                </div>
+            </div>
+            <hr />
+        </div>
+        <div style="padding-bottom: 15px;">
+            <span id="price-total">Prix total : {{cartInformation.price}}€</span>
+            <a routerLink="/order">
+                <button class="add-to-cart"  >Commander</button>
+            </a>
+        </div>
+    </span>
+        
+
+    <ng-template #noProduct> 
+        <span class="cart-empty">Le panier est vide !</span>
+    </ng-template>
+    
+</div>

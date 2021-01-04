@@ -1,0 +1,94 @@
+<div id="content">
+    <div class="div-content">
+        <a routerLink="/sales" class="title">
+            <span>Bon Plans</span>
+        </a>
+        
+        <div class="products-div">
+            <div  class="item" *ngFor="let sale of sales">
+                <a routerLink="/product/{{sale._id}}" >
+                    <img class="product-img-scd" src="{{sale.mainimage}}" width="76"  height="110" >
+                </a>
+
+                <a routerLink="/subcategory/{{sale.subcategory}}" class="subcat">
+                    <p >{{sale.subcategorie}}</p>
+                </a>
+
+
+                <a routerLink="/product/{{sale._id}}" class="name">
+                    <p>{{sale.name}}</p>
+                </a>
+
+                <a routerLink="/product/{{sale._id}}" class="price">
+                    <p >{{(sale.price - (sale.price*(sale.reduction/100))).toFixed(2)}}€</p>
+                </a>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div class="div-content">
+
+        <a routerLink="/news" class="title">
+            <span>Nouveautés</span>
+        </a>
+        
+        <div class="products-div">
+            <div class="item" *ngFor="let sale of news">
+                <a routerLink="/product/{{sale._id}}" class="title">
+                    <img class="product-img-scd" src="{{sale.mainimage}}" width="76"  height="110" >
+                </a>
+
+                <a routerLink="/subcategory/{{sale.subcategory}}" class="subcat">
+                    <p >{{sale.subcategorie}}</p>
+                </a>
+
+
+                <a routerLink="/product/{{sale._id}}" class="name">
+                    <p>{{sale.name}}</p>
+                </a>
+
+                <a routerLink="/product/{{sale._id}}" class="price">
+                    <p >{{(sale.price - (sale.price*(sale.reduction/100))).toFixed(2)}}€</p>
+                </a>
+                
+            </div>
+        </div>
+
+    </div>
+
+
+    <span *ngIf="recommendations[0]">
+
+        <div class="div-content">
+
+            <span class="title">Recommendations</span>
+            
+            <div class="products-div">
+                <div class="item" *ngFor="let sale of recommendations">
+                    <a routerLink="/product/{{sale._id}}" class="title">
+                        <img class="product-img-scd" src="{{sale.mainimage}}" width="76"  height="110" >
+                    </a>
+    
+                    <a routerLink="/subcategory/{{sale.subcategory}}" class="subcat">
+                        <p >{{sale.subcategorie}}</p>
+                    </a>
+    
+    
+                    <a routerLink="/product/{{sale._id}}" class="name">
+                        <p>{{sale.name}}</p>
+                    </a>
+    
+                    <a routerLink="/product/{{sale._id}}" class="price">
+                        <p >{{(sale.price - (sale.price*(sale.reduction/100))).toFixed(2)}}€</p>
+                    </a>
+                    
+                </div>
+            </div>
+    
+        </div>
+       
+    </span>
+
+</div>

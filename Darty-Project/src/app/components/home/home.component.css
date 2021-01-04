@@ -1,0 +1,62 @@
+.title{
+    text-decoration: none;
+    color: black;
+    font-family: Lato, sans-serif;
+    font-size: 34px;
+    font-weight: normal;
+    margin-left: 2rem;
+}
+
+.div-content{
+    background-color: white;
+    margin: 3% 5%;
+    height: 80%;
+    border-radius: 35px;
+}
+
+.products-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+	justify-content: flex-start;
+    align-content: stretch;
+    margin-top: 15px;
+    margin-left: 2rem;
+    
+}
+
+.subcat{
+    text-decoration: none;
+    color:#545050;
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.name{
+    text-decoration: none;
+    color: black;
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.price{
+    text-decoration: none;
+    color: black;
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.subcat:hover{
+    color: teal;
+}
+
+.name:hover, .price:hover{
+    color: #EB2626;
+}
+
+.item{
+    flex: 1 1 0px;
+}

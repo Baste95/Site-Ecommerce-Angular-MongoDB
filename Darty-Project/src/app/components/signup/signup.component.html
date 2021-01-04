@@ -1,0 +1,129 @@
+
+<div id="content">
+    <span id="title">S'inscrire</span>
+    <hr/>
+    <form id="signup-form" [formGroup]="signupForm" (ngSubmit)="onSubmit(signupForm)" class="formFlex">
+
+        <div id="left" class="flex-column">
+            <div class="field" [ngClass]="(f.firstname.invalid && (f.firstname.dirty || f.firstname.touched)) ? 'field-error' : 'field'">
+                <input id="first-name-input" type="text" name="first-name" class="input" formControlName="firstname" placeholder=" ">
+                <label for="first-name" class="label">Prénom</label>
+                
+            </div>
+            
+
+            <div class="field" [ngClass]="(f.lastname.invalid && (f.lastname.dirty || f.lastname.touched)) ? 'field-error' : 'field'">
+                <input id="last-name-input" type="text" name="last-name" class="input" formControlName="lastname" placeholder=" ">
+                <label for="last-name" class="label">Nom</label>
+            </div>
+
+            <div class="field" [ngClass]="(f.email.invalid && (f.email.dirty || f.email.touched)) ? 'field-error' : 'field'">
+                <input id="email-input" type="email" name="email" class="input" formControlName="email" placeholder=" ">
+                <label for="email" class="label">Email</label>
+            </div>
+
+
+            <div class="field" [ngClass]="(f.phone.invalid && (f.phone.dirty || f.phone.touched)) ? 'field-error' : 'field'">
+                <input id="phone-number-input" type="text" name="phone-number-name" class="input" formControlName="phone" placeholder=" ">
+                <label for="phone-number" class="label">Numéro de téléphone</label>
+            </div>
+            
+            <div class="field" [ngClass]="(f.password.invalid && (f.password.dirty || f.password.touched)) ? 'field-error' : 'field'">
+                <input id="password-input" type="password" name="password" class="input" formControlName="password" placeholder=" " type="{{ showPassword ? 'text' : 'password' }}">
+                <label for="password" class="label">Mot de passe</label>
+                <span class="toggle-password" (click)="onClickPassword()">
+                    <mat-icon aria-hidden="false" aria-label="Search icon" *ngIf="showPassword; else elseBlock">visibility</mat-icon></span>
+                    <ng-template #elseBlock><mat-icon aria-hidden="false" aria-label="Search icon">visibility_off</mat-icon></ng-template>
+            </div>
+            <div id="invalid-password">
+                <ul class="invalid" *ngIf="f.password.invalid && (f.password.dirty || f.password.touched)">
+                    <li>Minimum 8 caractères.</li>
+                    <li>Maximun 32 caractères</li>
+                    <li>Doit contenir une majuscule et une minuscule.</li>
+                    <li>Doit contenir un chiffre</li>
+                    <li>Doit contenir un caratère spécial <i>@$!%*?_&-</i></li>
+                </ul>
+            </div>
+
+            <div class="field" [ngClass]="(f.passwordvalidation.invalid && (f.passwordvalidation.dirty || f.passwordvalidation.touched)) ? 'field-error' : 'field'">
+                <input id="password-validation-input" type="password" name="password-validation" class="input" formControlName="passwordvalidation" placeholder=" " type="{{ showPasswordValidation ? 'text' : 'password' }}">
+                <label for="passwordvalidation" class="label">Confirmer mot de passe</label>
+                <span class="toggle-password" (click)="onClickPasswordValidation()">
+                    <mat-icon aria-hidden="false" aria-label="Search icon" *ngIf="showPasswordValidation; else elseBlockValidation">visibility</mat-icon></span>
+                    <ng-template #elseBlockValidation><mat-icon aria-hidden="false" aria-label="Search icon">visibility_off</mat-icon></ng-template>
+            </div>
+
+            <div id="invalid-password-confirmation">
+                <span class="invalid" *ngIf="signupForm.errors">
+                    Erreur: Les mots de passe de correspondent pas.
+                </span>
+            </div>
+        </div>
+
+        <div id="right" class="flex-column">
+            <div class="field" [ngClass]="(f.adress.invalid && (f.adress.dirty || f.adress.touched)) ? 'field-error' : 'field'">
+                <input id="adress-input" type="text" name="adress" class="input" formControlName="adress" placeholder=" ">
+                <label for="adress" class="label">Adresse</label>
+            </div>
+
+            <div class="field" >
+                <input id="adress2-input" type="text" name="adress2" class="input" formControlName="adress2" placeholder=" ">
+                <label for="adress2" class="label">Adresse 2 (facultatif)</label>
+            </div>
+
+            <div class="field" [ngClass]="(f.zip.invalid && (f.zip.dirty || f.zip.touched)) ? 'field-error' : 'field'">
+                <input id="-input" type="text" name="zip" class="input" formControlName="zip" placeholder=" ">
+                <label for="zip" class="label">Code Postal</label>
+            </div>
+
+            <div class="field" [ngClass]="(f.city.invalid && (f.city.dirty || f.city.touched)) ? 'field-error' : 'field'">
+                <input id="city-input" type="text" name="city" class="input" formControlName="city" placeholder=" ">
+                <label for="city" class="label">Ville</label>
+            </div>
+
+            <div class="field" [ngClass]="(f.country.invalid && (f.country.dirty || f.country.touched)) ? 'field-error' : 'field'">
+                <input id="country-input" type="text" name="country" class="input" formControlName="country" placeholder=" ">
+                <label for="country" class="label">Pays</label>
+            </div>
+
+            <div class="field" [ngClass]="(f.county.invalid && (f.county.dirty || f.county.touched)) ? 'field-error' : 'field'">
+                <input id="county-input" type="text" name="county" class="input" formControlName="county" placeholder=" ">
+                <label for="county" class="label">Région</label>
+            </div>
+
+            <div id="div-already-account">
+                <span id="span-already-account">
+                    Déjà un compte ? <a routerLink="/login" routerLinkActive="active" id="a-already-account">Connexion</a>
+                </span>
+            </div>
+        </div>
+
+        
+    </form>
+
+    <hr/>
+
+    <div id="footer-signup-flex" class="formFlex">
+
+        <div id="right-footer-signup" >
+            <div>
+                <input type="checkbox" id="scales" name="scales" form="signup-form" [formControl]="signupForm.controls.newsletter">
+                <label class="label-footer-signup" for="scales">S’inscrire à la newsletter.</label>
+            </div>
+              
+            <div>
+                <input type="checkbox" id="horns" name="horns" form="signup-form" [formControl]="signupForm.controls.terms">
+                <label class="label-footer-signup" for="horns">Accepter les <a routerLink="/" routerLinkActive="active" id="a-condition">conditions d’utilisation.</a></label>
+            </div>
+        </div>
+
+        <div id="left-footer-signup">
+            <div id="div-btn">
+                <button id="signup-button" type="submit"  form="signup-form">Connexion</button>
+            </div>
+        </div>
+
+    </div>
+        
+    
+</div>
