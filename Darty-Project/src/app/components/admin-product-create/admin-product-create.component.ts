@@ -17,7 +17,7 @@ export class AdminProductCreateComponent implements OnInit {
   secondaryimage = null;
   categoriesForm = [];
   subcategoriesForm = [];
-  constructor(private formBuilder: FormBuilder, private User: UserService, private Admin: AdminService, private snackBar: MatSnackBar, private routre: Router) {
+  constructor(private formBuilder: FormBuilder, private User: UserService, private Admin: AdminService, private snackBar: MatSnackBar, private router: Router) {
     this.addProductForm = this.formBuilder.group({
       name: ["", Validators.required],
       description: ["", Validators.required],
