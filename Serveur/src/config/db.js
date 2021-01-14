@@ -1,4 +1,4 @@
-const connectionString = "mongodb+srv://Bastien_Pelmard:D5D7rCXE1s03DzSj@cluster0.vorf6.mongodb.net/<dbname>?retryWrites=true&w=majority"
+const connectionString = ""
 const mongoose = require("mongoose");
 module.exports = function (app) {
     mongoose.connect(connectionString, {
